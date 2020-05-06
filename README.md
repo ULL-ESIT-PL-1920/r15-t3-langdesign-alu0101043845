@@ -36,6 +36,8 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
 
 <fact> ::= <value> | <word> <apply> | <parenthesis> | <array> // Added by: Casiano
 
+<value> ::= STRING | NUMBER | <word> ( <apply> | '['<expr>] | '.'<word> )*
+
 <leftVal> ::= <word> <leftValNext>
 
 <leftValNext> ::= '['<expr>]<leftValNext> | '.'<word><leftValNext> | empty
