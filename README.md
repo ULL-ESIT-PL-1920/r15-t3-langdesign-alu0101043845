@@ -34,9 +34,7 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
 
 <sum> ::= <fact> (('*', '/') <fact>)*
 
-<fact> ::= <value> | <word> <apply> | <parenthesis> | <array> // Added by: Casiano
-
-<value> ::= STRING | NUMBER | <word> ( <apply> | '['<expr>] | '.'<word> )*
+<fact> ::= (VALUE | WORD | <array> | <parenthesis> ) ( <apply> | '['<expr>] | '.'<word> )*
 
 <leftVal> ::= <word> <leftValNext>
 
