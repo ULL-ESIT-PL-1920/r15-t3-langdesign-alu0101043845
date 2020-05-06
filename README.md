@@ -38,9 +38,7 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
 
 <leftVal> ::= <word> <leftValNext>
 
-<leftValNext> ::= <leftArray><leftValNext> | '.'<word><leftValNext> | empty
-
-<leftArray> ::= '[' <expr> (',' <expr> )*] 
+<leftValNext> ::= '[' <expr> (',' <expr> )*]<leftValNext> | '.'<word><leftValNext> | empty
 
 <apply> ::= '(' <expr> (',' <expr>)* ')'<apply> | '.'<word><apply> | empty
 
