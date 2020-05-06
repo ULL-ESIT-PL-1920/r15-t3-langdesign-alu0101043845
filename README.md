@@ -26,7 +26,7 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
               
 <declaration> ::= 'var' WORD ('=' <expr>)?
 
-<asig> ::= <expr> ('=' <expr>)*
+<asig> ::= (<leftVal> '=')* <expr>
 
 <expr> ::= <term> (('==', '!=', '>', '>=', '<', '<=') <term>)*
 
@@ -35,6 +35,12 @@ Modifica la gramática corrigiendo los errores que veas, de manera que genere fr
 <sum> ::= <fact> (('*', '/') <fact>)*
 
 <fact> ::= <value> | <word> <apply> | <parenthesis> | <array> // Added by: Casiano
+
+<leftVal> ::= <word> <leftValNext>
+
+<leftValNext> ::= <leftArray><leftValNext> | '.'<word><leftValNext> | empty
+
+<leftArray> ::= '[' <expr> (',' <expr> )*] 
 
 <apply> ::= '(' <expr> (',' <expr>)* ')'<apply> | '.'<word><apply> | empty
 
